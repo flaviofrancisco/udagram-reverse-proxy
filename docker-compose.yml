@@ -17,6 +17,9 @@ services:
 
   udagram-api-users:    
     container_name: udagram-api-users
+    volumes: 
+      - ./root/users/.npm/:/root/.npm/
+      - ./config.json:/usr/src/app/config.json  
     build: 
       context: ../user
     expose:
@@ -29,6 +32,9 @@ services:
 
   udagram-api-feed:
     container_name: udagram-api-feed
+    volumes: 
+      - ./root/feed/.npm/:/root/.npm/
+      - ./config.json:/usr/src/app/config.json
     build: 
       context: ../feed
     expose:
