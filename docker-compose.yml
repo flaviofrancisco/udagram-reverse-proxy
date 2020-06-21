@@ -18,7 +18,6 @@ services:
   udagram-api-users:    
     container_name: udagram-api-users
     volumes: 
-      - ./root/users/.npm/:/root/.npm/
       - ./aws-config.json:/usr/src/app/aws-config.json  
     build: 
       context: ../user
@@ -32,8 +31,7 @@ services:
 
   udagram-api-feed:
     container_name: udagram-api-feed
-    volumes: 
-      - ./root/feed/.npm/:/root/.npm/
+    volumes:
       - ./aws-config.json:/usr/src/app/aws-config.json
     build: 
       context: ../feed
